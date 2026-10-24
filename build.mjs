@@ -4,7 +4,7 @@ import path from 'node:path';
 const pubDir = path.join(process.cwd(), 'public');
 fs.mkdirSync(pubDir, { recursive: true });
 
-for (const bfile of ['bundle_code.json', 'bundle_assets.json']) {
+for (const bfile of ['bundle_code.json', 'bundle_assets.json', 'bundle_pro_assets.json']) {
   const bpath = path.join(process.cwd(), bfile);
   if (!fs.existsSync(bpath)) continue;
   const entries = JSON.parse(fs.readFileSync(bpath, 'utf8'));
